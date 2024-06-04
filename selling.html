@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sell Your Property - Puspan Real Estate</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>SB Real Estate</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="selling.html">Sell</a></li>
+        <li><a href="buying.html">Buy</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="selling">
+      <h2>Sell Your Property</h2>
+      <form id="sellForm">
+        <label for="property-image">Property Image:</label>
+        <input type="file" id="property-image" name="property-image" accept="image/*" required>
+
+        <label for="price">Price:</label>
+        <input type="text" id="price" name="price" required>
+
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" required>
+
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 SB Real Estate. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const sellForm = document.getElementById('sellForm');
+    sellForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const imageFile = document.getElementById('property-image').files[0];
+      const priceData = document.getElementById('price').value;
+      const locationData = document.getElementById('location').value;
+
+      const reader = new FileReader();
+      reader.onload = function(event) {
+        const imageData = event.target.result; // Data URL of the image
+
+        const property = {
+          image: imageData,
+          price: priceData,
+          location: locationData
+        };
+
+        localStorage.setItem('property', JSON.stringify(property));
+
+        window.location.href = 'buying.html';
+      };
+      reader.readAsDataURL(imageFile);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buy Property - SB Real Estate</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>SB Real Estate</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="selling.html">Sell</a></li>
+        <li><a href="buying.html">Buy</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="buying">
+      <h2>Available Properties</h2>
+      <div id="propertyList"></div>
+    </section>
+  </main>
+
+  <script>
+    // Retrieve property details from localStorage
+    const propertyData = JSON.parse(localStorage.getItem('property'));
+
+    if (propertyData) {
+      // Create a new img element
+      const imgElement = document.createElement('img');
+
+      // Set src attribute to the image data URL
+      imgElement.src = propertyData.image;
+      imgElement.alt = 'Property Image';
+
+      // Create HTML markup for displaying property details
+      const propertyMarkup = `
+        <div class="property">
+          ${imgElement.outerHTML} <!-- Insert the img element -->
+          <p>Price: ${propertyData.price}</p>
+          <p>Location: ${propertyData.location}</p>
+        </div>
+      `;
+
+      // Append property markup to propertyList element
+      document.getElementById('propertyList').innerHTML = propertyMarkup;
+    }
+  </script>
+</body>
+</html>

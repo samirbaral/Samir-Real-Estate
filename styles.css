@@ -1,0 +1,116 @@
+/* General Styles */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+}
+
+header h1 {
+  margin: 0;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+}
+
+main {
+  padding: 20px;
+}
+
+/* Hero Section */
+#hero {
+  text-align: center;
+}
+
+/* Selling Section */
+#selling {
+  margin-top: 50px;
+}
+
+#selling form {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  margin: auto;
+}
+
+#selling form label {
+  margin-bottom: 10px;
+}
+
+#selling form input[type="file"] {
+  margin-bottom: 20px;
+}
+
+#selling form button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+#selling form button:hover {
+  background-color: #555;
+}
+
+/* Buying Section */
+#buying {
+  margin-top: 50px;
+}
+ .property {
+  margin-bottom: 20px;
+}
+
+.property img {
+  max-width: 100%;
+}
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* CSS for footer */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Additional CSS for main content */
+main {
+  padding-bottom: 60px; /* Adjust according to footer height */
+}
